@@ -1,0 +1,11 @@
+First run the script
+
+Connect to web.whatsapp.com and enter a chat (group/private)
+
+Select an option
+
+Follow the steps
+
+For Sticker option:
+
+You need to press F12 or enter inspect mode and Inspect the sticker you want. There is gonna be a <div class="d3JsaS"> where you copy d3JsaS and paste it into the sticker class
