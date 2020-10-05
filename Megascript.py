@@ -71,10 +71,10 @@ def main ():
             else:
                 send (words[i])
     elif (mode.lower() == 'sticker'):
-        classname = input('Class name : ')
+        classname = input('Sticker url (blob:https://web.whatsapp...) : ')
         print (classname)
         
-        sticker = driver.find_element_by_class_name(classname)
+        sticker = driver.find_element_by_xpath('//img[@src="' + classname + '"]')
         for i in range(count):
             sticker.click()
         
