@@ -14,7 +14,7 @@ print ("# FIRST SELECT A CONTACT/GROUP TO MESSAGE ON WHATSAPP WEB #")
 
 def main ():
     print ("")
-    mode = input ('Enter a mode (Fibonacci | Power | Consecutive | TextSpam | Send | FromTxt) : ')
+    mode = input ('Enter a mode (Fibonacci | Power | Consecutive | TextSpam | Send | FromTxt | Sticker) : ')
     if (mode.lower() != 'send' and mode.lower() != 'fromtxt'):
         count = int(input('Enter the amount of messages : '))
 
@@ -70,6 +70,13 @@ def main ():
                 send("-")
             else:
                 send (words[i])
+    elif (mode.lower() == 'sticker'):
+        classname = input('Class name : ')
+        print (classname)
+        
+        sticker = driver.find_element_by_class_name(classname)
+        for i in range(count):
+            sticker.click()
         
     else:
         print ("That's not implemented yet...")
