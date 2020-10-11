@@ -22,4 +22,4 @@ You can add placeholders to your message ($YEAR, $MONTH, $DAY, $HOUR, $MINUTE, $
 
 For custom option:
 
-You need a .txt file containing python code. The method send(message, delay) can be used. Other declared variables as well
+You need a .txt file containing python code. The method send(message, delay) can be used. Other declared variables will work as well
