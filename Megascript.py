@@ -38,7 +38,7 @@ def main ():
                 print ('Thats not a number...')
         
 
-    if (mode.lower() != 'help'):
+    if (mode.lower() != 'help' and mode.lower() != 'goto'):
         msg_box = driver.find_element_by_xpath('//div[@data-tab="1"]')
 
     def send (msg, s):
@@ -61,7 +61,7 @@ def main ():
                 message = msg.replace ("$SECOND", str(date.second)) .replace("$MINUTE", str(date.minute)).replace ("$HOUR", str(date.hour)).replace ("$DAY", str(date.day)).replace ("$MONTH", str(date.month)).replace ("$YEAR", str(date.year))
             else:
                 message = msg
-            send(message, delay)
+            send(messages, delay)
     elif (mode.lower() == 'pi'):
             send (str(pi)[0:int(input('Number of digits : '))], delay)
     elif (mode.lower() == 'consecutive'):
