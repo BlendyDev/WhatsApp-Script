@@ -6,6 +6,14 @@ Select an option
 
 Follow the steps
 
+----------------------------------------------------------------------------------------------------------------
+
 For Sticker option:
 
 You need to press F12 or enter inspect mode and Inspect the sticker you want. There is gonna be a <img src="blob:https://web.whatsapp.com/RANDOMCHARS"> where you copy blob:https://web.whatsapp.com/RANDOMCHARS and paste it into the sticker url
+
+----------------------------------------------------------------------------------------------------------------
+
+For textspam -p option:
+
+You can add placeholders to your message ($YEAR, $MONTH, $DAY, $HOUR, $MINUTE, $SECOND)
