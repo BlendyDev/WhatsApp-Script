@@ -38,7 +38,7 @@ def main ():
                 print ('Thats not a number...')
         
 
-    if (mode.lower() != 'help' and mode.lower() != 'goto'):
+    if (mode.lower() != 'help' and mode.lower() != 'goto' and mode.lower() != 'exit'):
         msg_box = driver.find_element_by_xpath('//div[@data-tab="1"]')
 
     def send (msg, s):
@@ -63,7 +63,7 @@ def main ():
                 message = msg
             send(message, delay)
     elif (mode.lower() == 'pi'):
-            send (str(pi)[0:int(input('Number of digits : '))], delay)
+        send (str(pi)[0:int(input('Number of digits : '))], delay)
     elif (mode.lower() == 'consecutive'):
         startingnum = int(input ('Starting on : '))
         num = startingnum
@@ -130,10 +130,7 @@ def main ():
         except:
             print ('That\'s not a number!')
     elif (mode.lower () == 'custom'):
-        file = open(input ('Type the name of the file (Current dir, no ".txt") : ') + '.txt', 'r')
-        codelines = file.read() .split('\n');
-        for line in codelines:
-            exec (line)
+        exec(open(input ('Type the name of the file (Current dir, no ".txt") : ') + '.txt', 'r').read())
     elif (mode.lower() == 'help'):
         print ('''First run the script
 
