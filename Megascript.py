@@ -129,18 +129,37 @@ def main ():
                 print ('Enter a number higher than 0!')
         except:
             print ('That\'s not a number!')
+    elif (mode.lower () == 'custom'):
+        file = open(input ('Type the name of the file (Current dir, no ".txt") : ') + '.txt', 'r')
+        codelines = file.read() .split('\n');
+        for line in codelines:
+            exec (line)
     elif (mode.lower() == 'help'):
         print ('''First run the script
 
 Connect to web.whatsapp.com and enter a chat (group/private)
 
-Select an option (Fibonacci | Power | Consecutive | TextSpam | Send | FromTxt | Sticker | Goto | Pi | Delay)
+Select an option (Fibonacci | Power | Consecutive | TextSpam | Send | FromTxt | Sticker | Goto | Pi | Delay | Custom)
 
 Follow the steps
+
+----------------------------------------------------------------------------------------------------------------
 
 For Sticker option:
 
 You need to press F12 or enter inspect mode and Inspect the sticker you want. There is gonna be a <img src="blob:https://web.whatsapp.com/RANDOMCHARS"> where you copy blob:https://web.whatsapp.com/RANDOMCHARS and paste it into the sticker url
+
+----------------------------------------------------------------------------------------------------------------
+
+For textspam -p option:
+
+You can add placeholders to your message ($YEAR, $MONTH, $DAY, $HOUR, $MINUTE, $SECOND)
+
+----------------------------------------------------------------------------------------------------------------
+
+For custom option:
+
+You need a .txt file containing python code. The method send(message, delay) can be used. Other declared variables will work as well
 
 ''')
         
