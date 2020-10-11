@@ -58,8 +58,10 @@ def main ():
         for i in range(count):
             if (phmode == True):
                 date = datetime.datetime.now()
-                msg = msg.replace ("$SECOND", str(date.second)) .replace("$MINUTE", str(date.minute)).replace ("$HOUR", str(date.hour)).replace ("$DAY", str(date.day)).replace ("$MONTH", str(date.month)).replace ("$YEAR", str(date.year))
-            send(msg, delay)
+                message = msg.replace ("$SECOND", str(date.second)) .replace("$MINUTE", str(date.minute)).replace ("$HOUR", str(date.hour)).replace ("$DAY", str(date.day)).replace ("$MONTH", str(date.month)).replace ("$YEAR", str(date.year))
+            else:
+                message = msg
+            send(message, delay)
     elif (mode.lower() == 'pi'):
             send (str(pi)[0:int(input('Number of digits : '))], delay)
     elif (mode.lower() == 'consecutive'):
