@@ -39,12 +39,12 @@ def main ():
         
 
     if (mode.lower() != 'help' and mode.lower() != 'goto' and mode.lower() != 'exit'):
-        msg_box = driver.find_element_by_xpath('//div[@data-tab="1"]')
+        msg_box = driver.find_element_by_xpath('//div[@data-tab="6"]')
 
     def send (msg, s):
         if (msg != ''):
             msg_box.send_keys(msg)
-            button = driver.find_element_by_class_name('_1U1xa')
+            button = driver.find_element_by_class_name('_1E0Oz')
             button.click()
             if (s > 0):
                 time.sleep(s)
