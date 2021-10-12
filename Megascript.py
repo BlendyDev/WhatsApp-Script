@@ -2,6 +2,7 @@ from selenium import webdriver
 from math import pi
 import time
 import re
+import traceback
 import datetime
 
 print ("")
@@ -15,7 +16,7 @@ print ("")
 
 ChromeOptions = webdriver.ChromeOptions()
 ChromeOptions.add_argument('--no-sandbox') 
-ChromeOptions.add_argument('--user-data-dir=./User_Data')
+#ChromeOptions.add_argument('--user-data-dir=./User_Data')
     
 driver = webdriver.Chrome(options=ChromeOptions)
 driver.get('https://web.whatsapp.com/')
@@ -38,18 +39,19 @@ def main ():
                 print ('Thats not a number...')
         
 
-    if (mode.lower() != 'help' and mode.lower() != 'goto' and mode.lower() != 'exit'):
-        msg_box = driver.find_element_by_xpath('//div[@data-tab="6"]')
+    if (mode.lower() != 'help' and mode.lower() != 'goto' and mode.lower() != 'exit' and mode.lower() != 'delay' and mode.lower() != ''):
+        msg_box = driver.find_element_by_xpath('//div[@data-tab="9"]')
 
     def send (msg, s):
         if (msg != ''):
             msg_box.send_keys(msg)
-            button = driver.find_element_by_class_name('_1E0Oz')
+            button = driver.find_element_by_class_name('_4sWnG')
             button.click()
             if (s > 0):
                 time.sleep(s)
-
-    if (mode.lower().split (' ')[0] == "textspam"):
+    if (mode == ''):
+        pass
+    elif (mode.lower().split (' ')[0] == "textspam"):
         phmode = False
         if (len(mode.lower().split(' ')) > 1):
             if (mode.lower().split(' ')[1] == '-p'):
@@ -130,7 +132,15 @@ def main ():
         except:
             print ('That\'s not a number!')
     elif (mode.lower () == 'custom'):
-        exec(open(input ('Type the name of the file (Current dir, no ".txt") : ') + '.txt', 'r').read())
+        try:
+            exec(open(input ('Type the name of the file (Current dir, no ".txt") : ') + '.txt', 'r').read())
+        except KeyboardInterrupt:
+            if (input ('An error ocurred. Type Y to see stack trace : ').lower() == 'y'):
+                print ('KeyboardInterrupt (Ctrl-C)')
+            driver.get('https://web.whatsapp.com/')
+        except:
+            if (input ('An error ocurred. Type Y to see stack trace : ').lower() == 'y'):
+                traceback.print_exc()
     elif (mode.lower() == 'help'):
         print ('''First run the script
 
